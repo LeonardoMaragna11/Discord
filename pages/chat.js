@@ -3,7 +3,7 @@ import React from 'react';
 import appConfig from '../config.json';
 import { createClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/router'
-
+import 'animate.css'
 
 
 const SUPABASE_URL ='https://sorexwekduheaphbaste.supabase.co'
@@ -237,3 +237,9 @@ function MessageList(props) {
     )
     
 }
+
+/* 
+
+animate__fadeIn
+
+*/
