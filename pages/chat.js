@@ -13,7 +13,7 @@ const SUPABASE_CLIENT = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
 export default function ChatPage() {
     const roteamento = useRouter()
-    const usuarioLogado = roteamento.query.username
+    const username = roteamento.query.username
     
     const [mensagem, setMensagem] = React.useState('')
     const [listaMensagens, SetListaMensagens] = React.useState([])
@@ -30,7 +30,7 @@ export default function ChatPage() {
     function handleNovaMensagem(novaMensagem){{
             if(novaMensagem != '' && novaMensagem != ' ' && novaMensagem != '  '){
                 const mensagem = {
-                    de: usuarioLogado,
+                    de: username,
                     texto: novaMensagem,
                 }
                 SUPABASE_CLIENT
@@ -92,7 +92,7 @@ export default function ChatPage() {
                     }}
                 >
                     
-                    <MessageList mensagem={listaMensagens} />
+                    <MessageList mensagem={listaMensagens} username={username} />
 
                     <Box
                         as="form"
