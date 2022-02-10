@@ -188,6 +188,16 @@ function MessageList(props) {
             {props.mensagem.map((mensagem)=>{
                 return(
                 <Box>
+                            <Image
+                                styleSheet={{
+                                    width: '20px',
+                                    height: '20px',
+                                    borderRadius: '50%',
+                                    display: 'inline-block',
+                                    marginRight: '8px',
+                                }}
+                                src={`https://github.com/${mensagem.de}.png`}
+                            />
                     <Text
                         key={mensagem.id}
                         tag="li"
@@ -205,16 +215,6 @@ function MessageList(props) {
                                 marginBottom: '8px',
                             }}
                         >
-                            <Image
-                                styleSheet={{
-                                    width: '20px',
-                                    height: '20px',
-                                    borderRadius: '50%',
-                                    display: 'inline-block',
-                                    marginRight: '8px',
-                                }}
-                                src={`https://github.com/${mensagem.de}.png`}
-                            />
                             <Text tag="strong">
                                 {mensagem.de}
                             </Text>
