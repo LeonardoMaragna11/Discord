@@ -206,7 +206,6 @@ function MessageList(props) {
                             borderRadius: '5px',
                             padding: '6px',
                             marginBottom: '12px',
-                            
                         }}
                     >
                         <Box
