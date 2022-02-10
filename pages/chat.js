@@ -216,7 +216,7 @@ function MessageList(props) {
                             }}
                         >
                             <Text tag="strong">
-                                {mensagem.de}
+                                {props.username}
                             </Text>
                             <Text
                                 styleSheet={{
