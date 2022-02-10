@@ -193,7 +193,6 @@ function MessageList(props) {
                             width: '20px',
                             height: '20px',
                             borderRadius: '50%',
-                            display: 'inline-block',
                             marginRight: '8px',
                         }}
                         src={`https://github.com/${mensagem.de}.png`}
