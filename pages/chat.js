@@ -188,7 +188,7 @@ function MessageList(props) {
             {props.mensagem.map((mensagem)=>{
                 return(
                 <Box styleSheet={{justifyContent:'center', flexDirection:'row',hover: {
-                    backgroundColor: appConfig.theme.colors.neutrals[700],
+                    backgroundColor: appConfig.theme.colors.neutrals[700], padding:'10px'
                 }}}>
                     <Image
                         styleSheet={{
