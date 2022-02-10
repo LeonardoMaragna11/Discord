@@ -187,14 +187,16 @@ function MessageList(props) {
             {/* CAIXA DE MSG */}
             {props.mensagem.map((mensagem)=>{
                 return(
-                <Box styleSheet={{justifyContent:'center', flexDirection:'row'}}>
+                <Box styleSheet={{justifyContent:'center', flexDirection:'row',hover: {
+                    backgroundColor: appConfig.theme.colors.neutrals[700],
+                }}}>
                     <Image
                         styleSheet={{
                             width: '20px',
-                            height: '20px',
+                            height: '20px', 
                             borderRadius: '50%',
                             marginRight: '8px',
-                        }}
+                        }}  
                         src={`https://github.com/${mensagem.de}.png`}
                     />
                     <Text
@@ -204,9 +206,7 @@ function MessageList(props) {
                             borderRadius: '5px',
                             padding: '6px',
                             marginBottom: '12px',
-                            hover: {
-                                backgroundColor: appConfig.theme.colors.neutrals[700],
-                            }
+                            
                         }}
                     >
                         <Box
