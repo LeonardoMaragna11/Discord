@@ -19,7 +19,7 @@ export default function ChatPage() {
     const [listaMensagens, SetListaMensagens] = React.useState([])
     React.useEffect(()=>{
         SUPABASE_CLIENT
-        .from('mensagens_duplicate')
+        .from('mensagens_duplicate2')
         .select('*')
         .order('id', { ascending: false })
         .then(({ data })=>{
@@ -34,7 +34,7 @@ export default function ChatPage() {
                     texto: novaMensagem,
                 }
                 SUPABASE_CLIENT
-                    .from('mensagens_duplicate')
+                    .from('mensagens_duplicate2')
                     .insert([
                         mensagem
                     ])
@@ -43,6 +43,7 @@ export default function ChatPage() {
                             data[0],
                             ...listaMensagens  
                         ])
+                        console.log(data)
                     })
 
 
@@ -114,7 +115,7 @@ export default function ChatPage() {
                                     handleNovaMensagem(mensagem)
                                 }
                             }}
-                            placeholder="Insira sua mensagem aqui..."
+                            placeholder="Mensagem"
                             type="textarea"
                             styleSheet={{
                                 border: '1px solid',
@@ -189,7 +190,8 @@ function MessageList(props) {
                 return(
                 <Box styleSheet={{justifyContent:'center', flexDirection:'row',hover: {
                     backgroundColor: appConfig.theme.colors.neutrals[700], padding:'10px'
-                }}}>
+                }}}
+                key={mensagem.id}>
                     <Image
                         styleSheet={{
                             width: '20px',

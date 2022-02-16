@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import ChatPage from './chat';
 
 function Titulo(props) {
-  console.log(props);
   const Tag = props.tag;
   return (
     <>
